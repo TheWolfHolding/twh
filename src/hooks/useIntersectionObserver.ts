@@ -60,9 +60,9 @@ export const useScrollProgress = () => {
       
       setScrollProgress(progress);
       
-      // Calcola la sezione attiva basata sul progress (12 sezioni totali)
-      const sectionIndex = Math.floor(progress * 12);
-      setActiveSection(Math.min(sectionIndex, 11));
+      // Calcola la sezione attiva basata sul progress (6 sezioni totali)
+      const sectionIndex = Math.floor(progress * 6);
+      setActiveSection(Math.min(sectionIndex, 5));
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });

@@ -1,240 +1,185 @@
 import type { CameraKeyframe } from './CameraController';
 
 /**
- * Keyframes ottimizzati per 2 modelli ripetuti (Helmet + Suzanne) x2
- * La camera segue un percorso che si connette perfettamente da fine a inizio
+ * Keyframes ottimizzati per 6 sezioni:
+ * 0. Homepage con modello rotante
+ * 1. Social Solutions Lab
+ * 2. iHyperactive  
+ * 3. PVRN® & Missing Clubs®
+ * 4. EyesJuice
+ * 5. Contatti
  */
 
 export const CAMERA_KEYFRAMES: CameraKeyframe[] = [
-  // 1. Inizio - Vista panoramica dall'alto
+  // 0. Homepage - Vista aerea della città dall'alto molto più distante
   {
-    position: [0, 16, 8],
-    target: [0, 12, 0],
-    fov: 75,
+    position: [0, 80, 30],
+    target: [0, 25, 0],
+    fov: 95,
     progress: 0.0
   },
 
-  // 2. Focus su Helmet 1 (Y: 12) - Discovery
+  // 0.1 Inizio discesa graduale verso la città
   {
-    position: [0, 14, 6],
-    target: [0, 12, 0],
-    fov: 45, 
-    progress: 0.125
+    position: [0, 60, 25],
+    target: [0, 25, 0],
+    fov: 85,
+    progress: 0.05
   },
 
-  // 3. Close-up Helmet 1
+  // 0.2 Discesa più vicina alla homepage
   {
-    position: [2, 12, 4],
-    target: [0, 12, 0],
-    fov: 35,
-    progress: 0.25
-  },
-
-  // 4. Focus su Suzanne 1 (Y: 8) - Welcome
-  {
-    position: [0, 10, 5],
-    target: [0, 8, 0],
-    fov: 50,
-    progress: 0.375
-  },
-
-  // 5. Focus su Helmet 2 (Y: 4) - Deep Analysis
-  {
-    position: [-2, 6, 3],
-    target: [0, 4, 0],
-    fov: 40,
-    progress: 0.5
-  },
-
-  // 6. Close-up drammatico Helmet 2
-  {
-    position: [1, 4, 2],
-    target: [0, 4, 0],
-    fov: 30,
-    progress: 0.625
-  },
-
-  // 7. Focus su Suzanne 2 (Y: 0) - Evolution
-  {
-    position: [0, 2, 4],
-    target: [0, 0, 0],
-    fov: 55,
-    progress: 0.75
-  },
-
-  // 8. Vista finale Suzanne 2 - Preparazione al loop
-  {
-    position: [0, -2, 6],
-    target: [0, 0, 0],
-    fov: 65,
-    progress: 0.875
-  },
-
-  // 9. Transizione finale per loop infinito
-  {
-    position: [0, -4, 8],
-    target: [0, 12, 0], // Punta già verso l'inizio
+    position: [0, 40, 20],
+    target: [0, 25, 0],
     fov: 75,
-    progress: 1.0
-  }
-];
-
-/**
- * Keyframes cinematografici per esperienze desktop
- * Movimenti più drammatici e zoom più pronunciati
- */
-export const CINEMATIC_KEYFRAMES: CameraKeyframe[] = [
-  // Vista aerea drammatica
-  {
-    position: [0, 20, 12],
-    target: [0, 12, 0],
-    fov: 80,
-    progress: 0.0
+    progress: 0.1
   },
 
-  // Discesa cinematografica verso Helmet 1
+  // 1. Transizione - Movimento verso Social Solutions Lab
   {
-    position: [3, 15, 8],
-    target: [0, 12, 0],
-    fov: 40,
-    progress: 0.125
-  },
-
-  // Close-up drammatico Helmet 1
-  {
-    position: [4, 12, 3],
-    target: [0, 12, 0],
-    fov: 25,
-    progress: 0.25
-  },
-
-  // Movimento fluido verso Suzanne 1
-  {
-    position: [-2, 10, 6],
-    target: [0, 8, 0],
-    fov: 45,
-    progress: 0.375
-  },
-
-  // Focus artistico su Helmet 2
-  {
-    position: [-4, 6, 2],
-    target: [0, 4, 0],
-    fov: 35,
-    progress: 0.5
-  },
-
-  // Zoom estremo Helmet 2
-  {
-    position: [2, 4, 1],
-    target: [0, 4, 0],
-    fov: 20,
-    progress: 0.625
-  },
-
-  // Vista maestosa Suzanne 2
-  {
-    position: [0, 3, 7],
-    target: [0, 0, 0],
-    fov: 60,
-    progress: 0.75
-  },
-
-  // Preparazione finale per il loop
-  {
-    position: [0, -5, 10],
-    target: [0, 0, 0],
+    position: [15, 30, 15],
+    target: [12, 15, 0],
     fov: 70,
-    progress: 0.875
+    progress: 0.15
   },
 
-  // Ritorno cinematografico all'inizio
+  // 1.1 Zoom ravvicinato su Suzanne (Social Solutions Lab)
   {
-    position: [0, -8, 15],
-    target: [0, 12, 0],
-    fov: 80,
-    progress: 1.0
-  }
-];
-
-/**
- * Keyframes ottimizzati per dispositivi mobili
- * Movimenti più semplici e distanze maggiori per touch
- */
-export const MOBILE_KEYFRAMES: CameraKeyframe[] = [
-  // Vista mobile ampia
-  {
-    position: [0, 18, 10],
-    target: [0, 12, 0],
-    fov: 85,
-    progress: 0.0
+    position: [18, 18, 8],
+    target: [12, 15, 0],
+    fov: 25,
+    progress: 0.2
   },
 
-  // Focus mobile Helmet 1
+  // 1.2 Vista completa Social Solutions Lab
   {
-    position: [0, 15, 8],
-    target: [0, 12, 0],
-    fov: 55,
+    position: [20, 20, 12],
+    target: [12, 15, 0],
+    fov: 35,
     progress: 0.25
   },
 
-  // Focus mobile Suzanne 1
+  // 2. Movimento attraverso la città verso iHyperactive
   {
-    position: [0, 11, 7],
-    target: [0, 8, 0],
-    fov: 60,
-    progress: 0.375
-  },
-
-  // Focus mobile Helmet 2
-  {
-    position: [0, 7, 6],
-    target: [0, 4, 0],
-    fov: 50,
-    progress: 0.625
-  },
-
-  // Focus mobile Suzanne 2
-  {
-    position: [0, 3, 8],
-    target: [0, 0, 0],
+    position: [-20, 25, 18],
+    target: [-15, 5, 0],
     fov: 65,
-    progress: 0.75
+    progress: 0.35
   },
 
-  // Ritorno mobile all'inizio
+  // 2.1 Zoom su Duck (iHyperactive)
   {
-    position: [0, -2, 12],
-    target: [0, 12, 0],
-    fov: 85,
+    position: [-22, 8, 8],
+    target: [-15, 5, 0],
+    fov: 20,
+    progress: 0.4
+  },
+
+  // 2.2 Vista laterale iHyperactive
+  {
+    position: [-25, 12, 10],
+    target: [-15, 5, 0],
+    fov: 30,
+    progress: 0.45
+  },
+
+  // 3. Volo cinematografico verso PVRN & Missing Clubs
+  {
+    position: [0, 40, 25],
+    target: [0, -10, 0],
+    fov: 80,
+    progress: 0.55
+  },
+
+  // 3.1 Discesa drammatica su Avocado (PVRN & Missing Clubs)
+  {
+    position: [5, -5, 8],
+    target: [0, -10, 0],
+    fov: 18,
+    progress: 0.6
+  },
+
+  // 3.2 Vista artistica PVRN
+  {
+    position: [8, -8, 12],
+    target: [0, -10, 0],
+    fov: 28,
+    progress: 0.65
+  },
+
+  // 4. Movimento laterale ampio verso EyesJuice
+  {
+    position: [-30, 0, 20],
+    target: [-18, -25, 0],
+    fov: 75,
+    progress: 0.72
+  },
+
+  // 4.1 Focus su Helmet (EyesJuice)
+  {
+    position: [-25, -22, 8],
+    target: [-18, -25, 0],
+    fov: 22,
+    progress: 0.77
+  },
+
+  // 4.2 Vista panoramica EyesJuice
+  {
+    position: [-30, -20, 15],
+    target: [-18, -25, 0],
+    fov: 35,
+    progress: 0.82
+  },
+
+  // 5. Ascesa verso Contatti
+  {
+    position: [0, -20, 20],
+    target: [0, -40, 0],
+    fov: 60,
+    progress: 0.88
+  },
+
+  // 5.1 Zoom finale su Suzanne (Contatti)
+  {
+    position: [5, -37, 8],
+    target: [0, -40, 0],
+    fov: 16,
+    progress: 0.92
+  },
+
+  // 5.2 Vista finale Contatti
+  {
+    position: [8, -35, 12],
+    target: [0, -40, 0],
+    fov: 25,
+    progress: 0.96
+  },
+
+  // 6. Vista finale - ritorno alla panoramica totale
+  {
+    position: [0, 100, 40],
+    target: [0, 0, 0],
+    fov: 100,
     progress: 1.0
   }
 ];
 
 // Export dei keyframes per uso nel progetto
 export const INFINITE_KEYFRAMES = CAMERA_KEYFRAMES;
-export const CINEMATIC_INFINITE_KEYFRAMES = CINEMATIC_KEYFRAMES;
-export const MOBILE_INFINITE_KEYFRAMES = MOBILE_KEYFRAMES;
+export const CINEMATIC_INFINITE_KEYFRAMES = CAMERA_KEYFRAMES;
+export const MOBILE_INFINITE_KEYFRAMES = CAMERA_KEYFRAMES;
 
 /**
  * Funzione che restituisce i keyframes appropriati in base al dispositivo
  */
 export function getAppropriateKeyframes(): CameraKeyframe[] {
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  const isTablet = typeof window !== 'undefined' && window.innerWidth < 1024;
-  
-  if (isMobile) {
-    return MOBILE_INFINITE_KEYFRAMES;
-  } else if (isTablet) {
-    return INFINITE_KEYFRAMES;
-  } else {
-    return CINEMATIC_INFINITE_KEYFRAMES;
-  }
+  // Per ora usiamo sempre gli stessi keyframes
+  return CAMERA_KEYFRAMES;
 }
 
 /**
- * Funzione che restituisce sempre i keyframes cinematografici
+ * Funzione che restituisce i keyframes cinematografici
  */
 export function getCinematicKeyframes(): CameraKeyframe[] {
-  return CINEMATIC_INFINITE_KEYFRAMES;
+  return CAMERA_KEYFRAMES;
 }

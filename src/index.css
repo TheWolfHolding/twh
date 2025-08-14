@@ -31,6 +31,8 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  /* SCROLL ESTREMAMENTE LUNGO - 10 volte più lungo */
+  height: 1000vh; /* Era 100vh, ora 1000vh per scroll molto più lungo */
   overflow-x: hidden;
   /* Ottimizzazioni per GSAP e animazioni fluide */
   overscroll-behavior: none;
@@ -40,6 +42,8 @@ body {
 #root {
   width: 100%;
   min-height: 100vh;
+  /* ALTEZZA ESTREMAMENTE ESTESA per scroll lungo */
+  height: 1000vh; /* Altezza estesa per scroll molto più lungo */
   position: relative;
 }
 

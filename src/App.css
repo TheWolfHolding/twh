@@ -3,6 +3,8 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
+  /* ALTEZZA ESTESA per scroll molto lungo */
+  height: 1000vh; /* Altezza estesa 10 volte per scroll più lungo */
 }
 
 /* Content overlay */
@@ -10,6 +12,8 @@
   position: relative;
   z-index: 10;
   pointer-events: none;
+  /* ALTEZZA ESTESA per contenuto scrollabile molto lungo */
+  height: 1000vh; /* Altezza contenuto estesa per scroll lungo */
 }
 
 .content-overlay > * {
