@@ -1,0 +1,170 @@
+/* Footer Component Styles */
+.footer {
+  position: relative;
+  z-index: 10;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 10, 0.95) 0%,
+    rgba(26, 26, 46, 0.95) 50%,
+    rgba(22, 33, 62, 0.95) 100%
+  );
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 3rem 2rem 1rem;
+  margin-top: 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.footer-section h3 {
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.footer-section h4 {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer-section p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.3rem 0;
+  border-left: 2px solid transparent;
+  padding-left: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.footer-section ul li:hover {
+  color: var(--secondary-color);
+  border-left-color: var(--secondary-color);
+  padding-left: 1rem;
+}
+
+.footer-credit {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 1rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+/* Animazioni */
+.footer-section {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.footer-section:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.footer-section:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.footer-section:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1rem 1rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.3rem;
+  }
+  
+  .footer-section h4 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Light theme adjustments */
+@media (prefers-color-scheme: light) {
+  .footer {
+    background: linear-gradient(
+      135deg,
+      rgba(240, 240, 240, 0.95) 0%,
+      rgba(230, 233, 240, 0.95) 50%,
+      rgba(221, 226, 236, 0.95) 100%
+    );
+    border-top-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .footer-section h3 {
+    color: #0066cc;
+  }
+  
+  .footer-section h4 {
+    color: var(--primary-color);
+  }
+  
+  .footer-section p,
+  .footer-section ul li {
+    color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .footer-section ul li:hover {
+    color: #0066cc;
+  }
+  
+  .footer-credit {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .footer-bottom p {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .footer-bottom {
+    border-top-color: rgba(0, 0, 0, 0.1);
+  }
+}

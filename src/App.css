@@ -1,0 +1,73 @@
+/* App Component Styles */
+.App {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Content overlay */
+.content-overlay {
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.content-overlay > * {
+  pointer-events: auto;
+}
+
+/* Content sections */
+.content-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.content-section:nth-child(even) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.content-section h2 {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.content-section p {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .content-section {
+    padding: 1rem !important;
+  }
+  
+  .content-section div {
+    padding-top: 10vh !important;
+  }
+}
+
+/* Light theme adjustments */
+@media (prefers-color-scheme: light) {
+  .content-section {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .content-section:nth-child(even) {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  .content-section h2 {
+    color: var(--text-dark);
+  }
+  
+  .content-section p {
+    color: rgba(0, 0, 0, 0.8);
+  }
+}

@@ -1,0 +1,132 @@
+/* ScrollIndicator Component Styles */
+.scroll-indicator {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.progress-bar {
+  width: 200px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 10px rgba(100, 108, 255, 0.5);
+}
+
+.debug-info {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.4;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-width: 150px;
+}
+
+.debug-info div {
+  margin-bottom: 2px;
+}
+
+/* Indicatori di loop infinito */
+.loop-indicator {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(100, 108, 255, 0.9);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeInOut 2s ease-in-out infinite;
+  z-index: 1001;
+}
+
+.loop-indicator.top {
+  top: 100px;
+  background: rgba(76, 175, 80, 0.9);
+}
+
+.loop-indicator.bottom {
+  bottom: 100px;
+  background: rgba(255, 193, 7, 0.9);
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.debug-info div:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scroll-indicator {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .progress-bar {
+    width: 120px;
+    height: 3px;
+  }
+  
+  .debug-info {
+    font-size: 11px;
+    padding: 6px 10px;
+    min-width: 120px;
+  }
+}
+
+/* Light theme adjustments */
+@media (prefers-color-scheme: light) {
+  .progress-bar {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .debug-info {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Animazioni */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(100, 108, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(100, 108, 255, 0.8);
+  }
+}
+
+.progress-fill {
+  animation: pulse 2s ease-in-out infinite;
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Three.js Scrollytelling 3D | React + Three.js</title>
+    <meta name="description" content="Esperienza 3D immersiva con scrollytelling infinito" />
+    <script>
+      // Force MIME type for ES modules
+      if ('noModule' in HTMLScriptElement.prototype === false) {
+        document.addEventListener('DOMContentLoaded', function() {
+          const scripts = document.querySelectorAll('script[type="module"]');
+          scripts.forEach(script => {
+            if (script.src && !script.src.includes('main.tsx')) {
+              const newScript = document.createElement('script');
+              newScript.type = 'text/javascript';
+              newScript.src = script.src;
+              script.parentNode.replaceChild(newScript, script);
+            }
+          });
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

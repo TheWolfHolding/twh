@@ -1,0 +1,11 @@
+**/*.js
+  Content-Type: text/javascript
+
+/assets/*.js
+  Content-Type: text/javascript
+
+*.js
+  Content-Type: text/javascript
+
+/*
+  X-Frame-Options: DENY

@@ -1,0 +1,268 @@
+/* AnimatedSection Component Styles - GSAP Optimized */
+.animated-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  margin: 2rem 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.animated-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(255, 255, 255, 0.05) 50%, 
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.animated-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.section-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+  /* GSAP gestisce le animazioni, rimuoviamo le transizioni CSS */
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #646cff, #747bff, #858dff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.section-description {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-details {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin: 2rem 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.section-details::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(100, 108, 255, 0.1) 0%, 
+    transparent 50%, 
+    rgba(116, 123, 255, 0.1) 100%
+  );
+  z-index: -1;
+}
+
+.section-details h4 {
+  font-size: 1.5rem;
+  color: #646cff;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.section-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section-details li {
+  padding: 0.5rem 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.1rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.section-details li::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: #646cff;
+  font-size: 0.8rem;
+}
+
+.section-details p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.section-indicator {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(100, 108, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(100, 108, 255, 0.3);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #646cff;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.section-indicator:hover {
+  transform: scale(1.1);
+  background: rgba(100, 108, 255, 0.3);
+}
+
+.section-number {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+}
+
+/* Effetti di glassmorphism migliorati */
+.section-details:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Animazione del testo */
+.section-title span {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.section-title:hover span {
+  transform: translateY(-2px);
+  text-shadow: 0 5px 15px rgba(100, 108, 255, 0.3);
+}
+
+/* Effetti speciali per sezioni specifiche */
+.section-content[data-section="0"] .section-title {
+  background: linear-gradient(135deg, #4CAF50, #8BC34A);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-content[data-section="1"] .section-title {
+  background: linear-gradient(135deg, #2196F3, #03DAC6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-content[data-section="2"] .section-title {
+  background: linear-gradient(135deg, #FF9800, #FFC107);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-content[data-section="3"] .section-title {
+  background: linear-gradient(135deg, #E91E63, #F06292);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .animated-section {
+    margin: 1rem 0;
+    border-radius: 15px;
+  }
+
+  .section-content {
+    padding: 1.5rem;
+  }
+
+  .section-details {
+    padding: 1.5rem;
+    border-radius: 15px;
+  }
+
+  .section-indicator {
+    top: 1rem;
+    right: 1rem;
+    width: 50px;
+    height: 50px;
+    font-size: 1rem;
+  }
+
+  .section-title {
+    margin-bottom: 1rem;
+  }
+
+  .section-description {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-content {
+    padding: 1rem;
+  }
+  
+  .section-details {
+    padding: 1rem;
+  }
+}
+
+/* Utility classes per GSAP */
+.gsap-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.gsap-visible {
+  opacity: 1;
+  visibility: visible;
+}

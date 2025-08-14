@@ -1,0 +1,86 @@
+/* Scene3D Component Styles */
+.canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    #0a0a0a 0%,
+    #1a1a2e 50%,
+    #16213e 100%
+  );
+}
+
+/* Loading Styles */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  font-family: inherit;
+}
+
+.loading p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #646cff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Performance optimizations */
+.canvas-container canvas {
+  display: block;
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .loading p {
+    font-size: 0.9rem;
+  }
+  
+  .loading-spinner {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Light theme adjustments */
+@media (prefers-color-scheme: light) {
+  .canvas-container {
+    background: linear-gradient(
+      135deg,
+      #f0f0f0 0%,
+      #e6e9f0 50%,
+      #dde2ec 100%
+    );
+  }
+  
+  .loading {
+    color: #333;
+  }
+  
+  .loading-spinner {
+    border-color: rgba(0, 0, 0, 0.3);
+    border-top-color: #646cff;
+  }
+}
