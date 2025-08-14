@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/twh_1.1/', // ⚠️ SOSTITUISCI con il nome del tuo repository
+  base: '/twh/', // ✅ Corretto per il repository "twh"
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
