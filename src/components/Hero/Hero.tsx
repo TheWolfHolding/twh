@@ -10,16 +10,16 @@ const Hero: React.FC = () => {
     <section className="hero">
       <div className="hero-content">
         <h1 className="hero-title">
-          3D Scrollytelling
-          <span className="hero-accent"> Experience</span>
+          The Wolf Holding
+          <span className="hero-accent"> Group</span>
         </h1>
         <p className="hero-subtitle">
-          Immergiti in un universo 3D ricco di atmosfera e profondità.
-          Scorri per navigare attraverso cristalli fluttuanti, anelli orbitali e nebbie volumetriche in un viaggio infinito!
+          Innovazione digitale e creatività senza confini.
+          Scopri i nostri brand e servizi attraverso un'esperienza 3D immersiva e coinvolgente!
         </p>
         <div className="hero-cta">
-          <p className="scroll-hint">↓ Scrolla per esplorare l'universo 3D</p>
-          <p className="infinite-hint">🌌 Atmosfera spaziale con elementi di sfondo dinamici</p>
+          <p className="scroll-hint">↓ Scrolla per esplorare i nostri servizi</p>
+          <p className="infinite-hint">🚀 Un viaggio infinito attraverso l'innovazione</p>
         </div>
       </div>
     </section>

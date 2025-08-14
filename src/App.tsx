@@ -19,18 +19,18 @@ function App() {
         
         {/* Sezione 1: Helmet - Prima Apparizione */}
         <AnimatedSection
-          title="⚡ Damaged Helmet - Discovery"
-          description="La prima scoperta del nostro viaggio: il leggendario casco spaziale danneggiato. Un simbolo di esplorazioni passate e avventure cosmiche, questo modello iconico dell'industria 3D ci accoglie con le sue texture metalliche dettagliate e i segni del tempo."
+          title="🌐 Social Solutions Lab"
+          description="La nostra divisione digitale specializzata in soluzioni web professionali. Creiamo siti web moderni, e-commerce performanti e strategie di digital advertising che trasformano le idee in successi digitali concreti."
           details={{
-            title: "🛡️ Prima Esplorazione",
+            title: "� Servizi Digitali",
             content: [
-              "• Vista: Panoramica generale",
-              "• Focus: Texture e materiali PBR",
-              "• Animazione: Rotazione lenta esplorativa",
-              "• Posizione: Livello superiore del viaggio"
+              "• Siti Web Professionali e Responsive",
+              "• E-commerce Avanzati e Scalabili", 
+              "• Digital Advertising e Social Media Marketing",
+              "• SEO e Ottimizzazione Performance"
             ]
           }}
-          backgroundColor="rgba(255, 193, 7, 0.1)"
+          backgroundColor="rgba(33, 150, 243, 0.1)"
           height="100vh"
           sectionIndex={0}
         />
